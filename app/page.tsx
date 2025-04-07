@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { connection } from 'next/server';
+import { CurrentTimeFromAPI } from './components/CurrentTime';
 
 export default async function Home() {
     const timeOnServer = new Date().toLocaleTimeString('en-US');
@@ -8,6 +9,7 @@ export default async function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             Time on the server {timeOnServer}
+            <CurrentTimeFromAPI />
         </main>
     );
 }
